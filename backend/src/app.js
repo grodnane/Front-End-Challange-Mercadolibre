@@ -11,7 +11,10 @@ import item from './routes/itemsSearch.js'
 //config
 const app = express()
 app.set('port', process.env.PUBLIC_PORT)
-var accessLogStream = fs.createWriteStream(path.join('./src/logs', 'access.log'), { flags: 'a' })
+const accessLogStream = fs.createWriteStream(path.join('./src/logs', 'access.log'), { flags: 'a' });
+var corsOptions = {
+  //TODO
+  origin: ''}
 //middlewares
 app.use(cors())
 app.use(morgan('combined', {stream:accessLogStream}))
