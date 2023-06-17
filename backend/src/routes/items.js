@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const items = express.Router();
 
-items.get("/items", async (req, res) => {
+items.get("/", async (req, res) => {
     const {q} = req.query
     const limit = '&limit=4'
     
@@ -30,7 +30,7 @@ items.get("/items", async (req, res) => {
                 title,
                 price:{
                     currency:currency_id,
-                    amount:Math.floor(price),
+                    amount: Math.floor(price),
                     decimals: Math.floor(price *10%10/10*100)
                 },
                 picture:staticIMG,
@@ -57,10 +57,10 @@ items.get("/items", async (req, res) => {
         res.status(200);
         res.send(response);
 
-    } catch (error) {
-    console.error(error);
+    } catch (err) {
+    console.error(err);
     res.status(500);
-    res.send(error);
+    res.send(err);
   }
 })
 

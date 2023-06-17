@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import router from './routes/items.js';
-
+import item from './routes/itemsSearch.js'
 
 
 //config
@@ -17,11 +17,11 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.redirect("/api");
 });
-app.use("/api/", router)
+app.use("/api/items", router)
 
-app.get('/', function(req, res) {
-  res.send('hello world');
-});
+app.use("/api/:id",item)
+
+
 //404 error.
 
 
