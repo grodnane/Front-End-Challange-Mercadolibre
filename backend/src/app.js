@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import router from './routes/items.js';
 
 
 
@@ -12,6 +13,11 @@ app.use(cors())
 app.use(express.json());
 
 //routes 
+//redirect to "/api/"" if "/"
+app.get("/", (req, res) => {
+  res.redirect("/api");
+});
+app.use("/api/", router)
 
 app.get('/', function(req, res) {
   res.send('hello world');
