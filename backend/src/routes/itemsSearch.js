@@ -4,14 +4,14 @@ import axios from 'axios';
 const items = express.Router();
 
 
-items.get("/items/:id", async (req,res)=>{
+items.get("/:id", async (req,res)=>{
 
-    const itemid = req.query
+    const itemId = req.params.id;
 
     try{
         
-        const itemURL = `https://api.mercadolibre.com/items/${itemid}`
-        const descriptionURL = `https://api.mercadolibre.com/items/${itemid}/description`
+        const itemURL = `https://api.mercadolibre.com/items/${itemId}`
+        const descriptionURL = `https://api.mercadolibre.com/items/${itemId}/description`
 
 
         const itemData = await axios.get(itemURL);

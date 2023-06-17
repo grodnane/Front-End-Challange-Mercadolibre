@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const items = express.Router();
 
-items.get("/", async (req, res) => {
+items.get("", async (req, res) => {
     const {q} = req.query
     const limit = '&limit=4'
     
