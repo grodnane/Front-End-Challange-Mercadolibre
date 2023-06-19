@@ -13,7 +13,7 @@ items.get("", async (req, res) => {
         //get data from "https://api.mercadolibre.com/sites/MLA/search?q=:query" 
         const data = await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=:${q}${limit}`);
 
-        const {results,filters,available_filters} = data.data
+        const {results,filters} = data.data
         console.log(results)
         
         //format the results
@@ -43,14 +43,36 @@ items.get("", async (req, res) => {
 
 
         //check for categories
-        let categories;
-        //TODO : Get categories from filters or avalible filters
+        const categories = [];
+        //Get categories from filters 
+        if(filters.length){
+            const {values} = filters[0];
+            const {path_from_root} = values[0]
+            path_from_root.map(path => {
+                const {name} = path
+                categories.push(name)
+            })
+
+        }else{
+            //if there's no category we'll get the category from the first result
+            const {id} = items[0];
+            console.log(id)
+            const itemCategory = await axios.get(`https://api.mercadolibre.com/items/${id}`);
+            const {category_id} = itemCategory.data;
+            const categoryList = await axios.get(
+                `https://api.mercadolibre.com/categories/${category_id}`
+              );
+            const {name} = categoryList.data;
+            categories.push(name)
+            
+        }
        
         const response = {
             Author:{
                 name:"Gustavo",
                 lastname:"Rodñane"
             },
+            categories,
             items
         }
         

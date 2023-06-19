@@ -21,12 +21,15 @@ app.use(morgan('combined', {stream:accessLogStream}))
 app.use(express.json());
 
 //routes 
-//redirect to "/api/"" if "/"
+//redirect to "/api/items"" if "/"
 app.get("/", (req, res) => {
-  res.redirect("/api");
+  res.redirect("/api/items");
 });
+
+///api/items?q=:query
 app.use("/api/items", router)
 
+///api/items/:id
 app.use("/api/items/",item)
 
 
