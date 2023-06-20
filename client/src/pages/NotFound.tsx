@@ -1,0 +1,17 @@
+
+
+function NotFound() {
+  return (
+    <div className='notFounContainer flex flex-row items-center justify-center p-11 h-[204px] mw-[1018px] my-[48px] mx-auto w-[1018px] rounded-sm bg-white'>
+        <div className="searchSVG">
+            <img src="../../public/notFound.svg" alt="loupe" style={{width:80,height:80}}/>
+        </div>
+        <div className="advice p-4 m-4">
+            <h4 className='text-xl font-bold mb-4'>Escribí en el buscador lo que querés encontrar.</h4>
+            <li className='list-disc'>Escribí tu búsqueda en el campo que figura en la parte superior de la pantalla.</li>
+        </div>
+    </div>
+  )
+}
+
+export default NotFound

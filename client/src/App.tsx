@@ -1,13 +1,40 @@
-
-import './App.css'
+import { Suspense, lazy } from 'react'
 import { Navbar } from './components/Navbar'
 
+
+
+import Homepage from "./pages/Homepage";
+import { useRoutes } from 'react-router-dom';
+const Items = lazy(() => import("./pages/Items"));
+const Details = lazy(() => import("./pages/Details"));
+const NotFoundPage = lazy(() => import("./pages/NotFound"));
+
+
+const routes = [
+  {path:'/',element: <Homepage />},
+  {path:'/items',element: <Items/>},
+  {path:'/items/:id',element:<Details/>}
+  
+]
 function App() {
 
+  
+    const routeResult = useRoutes(routes);
 
-  return (
+
+    return (
     <>
       <Navbar/>
+      
+
+      <Suspense fallback={<Homepage />}>
+        <div className="body flex flex-col  items-center h-screen w-full">
+
+        {routeResult || <NotFoundPage />}
+        </div>
+      </Suspense>
+      
+      
     </>
   )
 }
