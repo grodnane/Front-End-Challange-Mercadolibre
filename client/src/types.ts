@@ -15,8 +15,20 @@ export type Item = {
     condition: string
     free_shipping: boolean
     thumbnail: string
+    description: string
+    sold_quantity: number
+
 }
 
 export type Category = {
     category: string
+}
+
+export type Seo = {
+    title: string
+    description: string
+    type?: string
+    url?: string
+    image?: string
+
 }

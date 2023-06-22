@@ -7,7 +7,7 @@ function NotFound() {
             <img src="../../public/notFound.svg" alt="loupe" style={{width:80,height:80}}/>
         </div>
         <div className="advice p-4 m-4">
-            <h4 className='text-xl font-bold mb-4'>Escribí en el buscador lo que querés encontrar.</h4>
+            <h4 className='text-xl font-bold mb-4'>Ups, no pudimos encontrar lo que buscabas.</h4>
             <li className='list-disc'>Escribí tu búsqueda en el campo que figura en la parte superior de la pantalla.</li>
         </div>
     </div>

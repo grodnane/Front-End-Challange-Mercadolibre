@@ -63,9 +63,12 @@ items.get("", async (req, res) => {
                 categories.push(name)
             })
 
-        }else{
-            //if there's no category we'll get the category from the first result, if there is a result            
-            if(items[0]){
+        }
+        //some searches have no cateries because they are to general as a workaround we can get the category of the first product to display on the client.
+        // For that uncomment the lines below
+        //else{
+
+            /* if(items[0]){
             const {id} = items[0];
             const itemCategory = await axios.get(`https://api.mercadolibre.com/items/${id}`);
             const {category_id} = itemCategory.data;
@@ -73,11 +76,11 @@ items.get("", async (req, res) => {
                 `https://api.mercadolibre.com/categories/${category_id}`
               );
             const {name} = categoryList.data;
-            categories.push(name)}
+            categories.push(name)} */
             
             
             
-        }
+        //}
        //creating header
         const response = {
             Author:{
