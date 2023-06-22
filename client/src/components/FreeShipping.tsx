@@ -1,4 +1,3 @@
-import React from 'react'
 
 function FreeShipping( free_shipping:{free_shipping:boolean}) {
   return (

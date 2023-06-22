@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import { Item, Seo } from '../types';
 import Categories from '../components/Categories';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import Price from '../components/Price';
 import { descriptionFormatter, evalQuantitySold } from '../utils/helpers';
 import SEO from '../components/SEO';
-import NotFound from './NotFound';
+
 
 function Details({...props}){ 
 

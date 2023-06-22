@@ -5,7 +5,7 @@ import { converThounsends, sign } from '../utils/helpers'
 function Price(props:Price) {
    
     
-    const {amount,currency,decimals} =props
+    const {amount,currency/* ,decimals */} =props
 
   return (
     <div className="priceContainer">

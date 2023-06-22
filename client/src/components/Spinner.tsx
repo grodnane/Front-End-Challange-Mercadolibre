@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Spinner() {
   return (
     <button disabled type="button" className="mt-20 py-2.5 px-5 mr-2 text-sm font-medium text-[#9e931d] bg-white rounded-lg border border-[#998d0a] hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-200 dark:text-[#c4b515] dark:border-gray-600 dark:hover:text-white dark:hover:bg-yellow-200 inline-flex items-center" >

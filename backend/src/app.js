@@ -14,7 +14,7 @@ app.set('port', process.env.PUBLIC_PORT)
 const accessLogStream = fs.createWriteStream(path.join('./src/logs', 'access.log'), { flags: 'a' });
 var corsOptions = {
   //TODO
-  origin: ''}
+  origin:`${process.env.PUBLIC_URI}`}
 //middlewares
 app.use(cors())
 app.use(morgan('combined', {stream:accessLogStream}))

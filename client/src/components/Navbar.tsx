@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react"
-import {Link, useNavigate , useSearchParams } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 
 export const Navbar = ()=> {
     const [input, setInput] = useState<string>('')
