@@ -4,16 +4,15 @@ import {Link, useNavigate , useSearchParams } from "react-router-dom";
 export const Navbar = ()=> {
     const [input, setInput] = useState<string>('')
     
-    const [searchParams, setSearchParams] = useSearchParams();
     const navigate =useNavigate()
     const handleSubmit = (event:FormEvent<HTMLFormElement>)=>{
         event.preventDefault();
         //early return on empty submit
-        if(input===null){
+        if(input=== ''){
             return
         }       
         const params = input;
-        const URLParams = {search:params}
+        
        // console.log(URLParams)
        navigate(`items?search=${params}`)
         ;

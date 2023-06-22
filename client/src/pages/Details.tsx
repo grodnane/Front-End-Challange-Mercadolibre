@@ -27,7 +27,7 @@ function Details({...props}){
         setItem(item)
         setCategories(categories)
         setLoading(false);
-        console.log(item)
+        
 
       })
 
@@ -88,7 +88,7 @@ const seo:Seo = useMemo(()=>{
                   <div className="imageContainer p-5 "><img src={item?.picture} alt={item?.title} style={{height:'100%', width:'100%'}} /></div>
                   <div className="descriptionContainer p-5 w-full">
                     <h3 className='text-xl font-semibold m-3'>Descripción del producto</h3>
-                    <p className='ml-3 font-light'>{item && descriptionFormatter(item?.description)}</p>
+                    <span className='ml-3 font-light'>{item && descriptionFormatter(item?.description)}</span>
                     </div>
                 </section>
                 <section className="rightContainer gap-3 flex flex-col justify-start m-6 p-6">

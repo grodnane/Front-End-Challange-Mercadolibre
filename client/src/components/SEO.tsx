@@ -16,7 +16,7 @@ const defaultSEO:Seo = {
 function SEO(seo:Seo=defaultSEO) {
   return (
    <Helmet>
-    <html lang='en'></html>
+    <html lang='es-AR'></html>
     <meta charSet="utf-8" />
     <title>{seo.title}</title>
     <meta name="robots" content="noindex, nofollow" />
