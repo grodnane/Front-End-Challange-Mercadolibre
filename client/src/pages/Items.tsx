@@ -27,7 +27,7 @@ function Items() {
     () => {
         try{
             
-            axios.get(`https://meli-challange.onrender.com/api/items${query}`)
+            axios.get(`https://meli-challange.onrender.com/api/items?q=${query}`)
             .then((res)=>{
                 if(res.data.items.length){
                 setItems(res.data.items);
