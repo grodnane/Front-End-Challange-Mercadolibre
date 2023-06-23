@@ -1,6 +1,7 @@
 import  { useMemo } from 'react'
 import SEO from '../components/SEO';
 import { Seo } from '../types';
+import meli from '../../public/meli.svg'
 
 function Homepage() {
 
@@ -16,7 +17,7 @@ function Homepage() {
   return (
     <div className='h-screen bg-white max-w-[900px] w-full m-9 flex flex-col items-center justify-center gap-6 rounded-md'>
       <SEO {...seo}/>
-      <img src="../../public/meli.svg" alt="Mercadolibre" style={{width:'400px', height:'200px'}} />
+      <img src={meli} alt="Mercadolibre" style={{width:'400px', height:'200px'}} />
       <h1 className='font-bold text-4xl hidden'>mercado libre</h1>
       <h2 className=' font-semibold'>Envíos gratis en el dia</h2>
 

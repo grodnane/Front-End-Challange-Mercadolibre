@@ -1,5 +1,7 @@
 import { FormEvent, useState } from "react"
 import {Link, useNavigate } from "react-router-dom";
+import search from '../../public/search.svg'
+import meli from '../../public/meli.svg'
 
 export const Navbar = ()=> {
     const [input, setInput] = useState<string>('')
@@ -31,7 +33,7 @@ export const Navbar = ()=> {
             
             
             <Link to={"/"} onClick={handleWipeSearchBar}>
-                <img src="../../public/meli.svg" alt="logo" width={112} height={90} style={{backgroundColor:'#fff159'}}/>
+                <img src={meli} alt="logo" width={112} height={90} style={{backgroundColor:'#fff159'}}/>
             </Link>
             
         </div>
@@ -42,7 +44,7 @@ export const Navbar = ()=> {
 
             <input type="text" onChange={(e)=>setInput(e.target.value)} value={input} placeholder="Nunca dejes de buscar"  className="w-full h-9 p-4 rounded-l-sm outline-0 outline-slate-100 outline-offset-0 placeholder-opacity-50"/>
             <button type="submit" className="left-0 bg-slate-100 h-9 w-9 flex justify-center items-center rounded-r-sm">
-                <img src="../../public/search.png" height={20} width={20} />
+                <img src={search} height={20} width={20} />
             </button>
             </div>
         </form>

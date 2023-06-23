@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom"
+import error from '../../public/error.svg'
 
 
 function Error404() {
     return (
       <div className='404Container flex flex-row items-center justify-center p-11  mw-[1018px] my-[48px] mx-auto w-[1018px] rounded-sm bg-white h-[204px]'>
           <div className="ErrorSVG">
-              <img src="../../public/error.svg" alt="error" style={{width:80,height:80}}/>
+              <img src={error} alt="error" style={{width:80,height:80}}/>
           </div>
           <div className="advice p-4 m-4">
               <h4 className='text-xl font-bold mb-4 text-center'>¡Ha ocurrido un error!</h4>
