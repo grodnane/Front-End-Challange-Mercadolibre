@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan'
@@ -5,7 +6,6 @@ import fs from 'fs'
 import path from 'path'
 import router from './routes/items.js';
 import item from './routes/itemsSearch.js'
-import 'dotenv/config'
 
 
 
