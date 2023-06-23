@@ -23,7 +23,7 @@ items.get("/:id", async (req,res)=>{
     
 
         const staticIMG = `http://http2.mlstatic.com/D_${thumbnail_id}-L.jpg`
-        const description = descriptionData.data.plain_text
+        const description = descriptionData.data?.plain_text
         
         
         const item ={

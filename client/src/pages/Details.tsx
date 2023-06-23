@@ -22,14 +22,10 @@ function Details({...props}){
         
        axios.get(`${import.meta.env.VITE_PUBLIC_URI}/${string}`)
       .then((res)=>{
-
         const {item,categories} = res.data
-        
         setItem(item)
         setCategories(categories)
         setLoading(false);
-        
-
       })
 
     }catch(err){
@@ -49,11 +45,8 @@ function Details({...props}){
           console.log(err.request);
         }else{
           console.log(err)
-        }
-
-        
-      }
-      
+        }       
+      }      
     }
   }, [string])
     
@@ -89,7 +82,8 @@ const seo:Seo = useMemo(()=>{
                   <div className="imageContainer p-5 "><img src={item?.picture} alt={item?.title} style={{height:'100%', width:'100%'}} /></div>
                   <div className="descriptionContainer p-5 w-full">
                     <h3 className='text-xl font-semibold m-3'>Descripción del producto</h3>
-                    <span className='ml-3 font-light'>{item && descriptionFormatter(item?.description)}</span>
+                    <span className='ml-3 font-light'>{item && !item.description ? <p>El vendedor no incluyó una descripción del producto.</p> : 
+                    descriptionFormatter(item?.description)}</span>
                     </div>
                 </section>
                 <section className="rightContainer gap-3 flex flex-col justify-start m-6 p-6">
