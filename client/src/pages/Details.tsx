@@ -7,6 +7,7 @@ import axios from 'axios';
 import Price from '../components/Price';
 import { descriptionFormatter, evalQuantitySold } from '../utils/helpers';
 import SEO from '../components/SEO';
+import 'dotenv/config'
 
 
 function Details({...props}){ 
@@ -19,7 +20,7 @@ function Details({...props}){
   const getItem = useCallback(()=>{
     try{
 
-       axios.get(`http://localhost:3000/api/items/${string}`)
+       axios.get(`${process.env.PUBLIC_URI}/${string}`)
       .then((res)=>{
 
         const {item,categories} = res.data

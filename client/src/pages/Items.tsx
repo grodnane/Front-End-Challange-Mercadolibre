@@ -7,6 +7,7 @@ import NotFound from './NotFound';
 import Spinner from '../components/Spinner';
 import Categories from '../components/Categories';
 import SEO from '../components/SEO';
+import 'dotenv/config'
 
 
 
@@ -18,6 +19,7 @@ function Items() {
     const [loading, setLoading] = useState<boolean>(false);
     const [notFound,setNotFound] = useState<boolean>(false)
     const query = searchParams.get("search")
+
     
 
     
@@ -25,7 +27,7 @@ function Items() {
     () => {
         try{
         
-            axios.get(`http://localhost:3000/api/items?q=${query}`)
+            axios.get(`${process.env.PUBLIC_URI}${query}`)
             .then((res)=>{
                 if(res.data.items.length){
                 setItems(res.data.items);
