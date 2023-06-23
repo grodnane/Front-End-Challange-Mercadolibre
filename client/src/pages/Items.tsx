@@ -7,7 +7,7 @@ import NotFound from './NotFound';
 import Spinner from '../components/Spinner';
 import Categories from '../components/Categories';
 import SEO from '../components/SEO';
-import 'dotenv/config'
+
 
 
 
@@ -26,8 +26,8 @@ function Items() {
   const getItems = useCallback(
     () => {
         try{
-        
-            axios.get(`${import.meta.env.PUBLIC_URI}${query}`)
+            
+            axios.get(`https://meli-challange.onrender.com/api/items${query}`)
             .then((res)=>{
                 if(res.data.items.length){
                 setItems(res.data.items);

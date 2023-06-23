@@ -7,7 +7,7 @@ import axios from 'axios';
 import Price from '../components/Price';
 import { descriptionFormatter, evalQuantitySold } from '../utils/helpers';
 import SEO from '../components/SEO';
-import 'dotenv/config'
+
 
 
 function Details({...props}){ 
@@ -19,8 +19,8 @@ function Details({...props}){
   
   const getItem = useCallback(()=>{
     try{
-
-       axios.get(`${process.env.PUBLIC_URI}/${string}`)
+        
+       axios.get(`https://meli-challange.onrender.com/api/items/${string}`)
       .then((res)=>{
 
         const {item,categories} = res.data
