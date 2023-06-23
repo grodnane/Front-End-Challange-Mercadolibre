@@ -1,7 +1,6 @@
 import app from './app.js'
-import dotenv from 'dotenv'
+import 'dotenv/config'
 
-dotenv.config()
 
 
 app.listen(3000);
