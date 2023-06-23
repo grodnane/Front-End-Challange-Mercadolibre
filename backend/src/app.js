@@ -5,6 +5,7 @@ import fs from 'fs'
 import path from 'path'
 import router from './routes/items.js';
 import item from './routes/itemsSearch.js'
+import dotenv from 'dotenv'
 
 
 
@@ -15,6 +16,7 @@ const accessLogStream = fs.createWriteStream(path.join('./src/logs', 'access.log
 var corsOptions = {
   //TODO
   origin:`${process.env.PUBLIC_URI}`}
+dotenv.config()
 //middlewares
 app.use(cors())
 app.use(morgan('combined', {stream:accessLogStream}))
