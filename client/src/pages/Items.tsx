@@ -27,7 +27,7 @@ function Items() {
     () => {
         try{
         
-            axios.get(`${process.env.PUBLIC_URI}${query}`)
+            axios.get(`${import.meta.env.PUBLIC_URI}${query}`)
             .then((res)=>{
                 if(res.data.items.length){
                 setItems(res.data.items);

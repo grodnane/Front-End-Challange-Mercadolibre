@@ -20,7 +20,7 @@ function SEO(seo:Seo=defaultSEO) {
     <meta charSet="utf-8" />
     <title>{seo?.title||defaultSEO.title}</title>
     <meta name="robots" content={`noindex, nofollow`} />
-    <meta name='description' content={seo?.description || defaultSEO.description} />
+    <meta property='description' name='description' content={seo?.description || defaultSEO.description} />
     { /* Facebook tags */ }
     <meta property="og:type" content="website" />
     <meta property="og:title" content={seo?.title  || defaultSEO.title} />
