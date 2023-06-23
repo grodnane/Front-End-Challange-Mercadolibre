@@ -26,8 +26,8 @@ function Items() {
   const getItems = useCallback(
     () => {
         try{
-            
-            axios.get(`https://meli-challange.onrender.com/api/items?q=${query}`)
+            console.log(import.meta.env.VITE_PUBLIC_URI)
+            axios.get(`${import.meta.env.VITE_PUBLIC_URI}?q=${query}`)
             .then((res)=>{
                 if(res.data.items.length){
                 setItems(res.data.items);

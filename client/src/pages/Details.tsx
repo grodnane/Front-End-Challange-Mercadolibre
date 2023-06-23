@@ -20,7 +20,7 @@ function Details({...props}){
   const getItem = useCallback(()=>{
     try{
         
-       axios.get(`https://meli-challange.onrender.com/api/items/${string}`)
+       axios.get(`${import.meta.env.VITE_PUBLIC_URI}/${string}`)
       .then((res)=>{
 
         const {item,categories} = res.data
