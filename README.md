@@ -31,7 +31,9 @@
 * vite
 * react + typescript (dev)
 * axios
-* react dom 
+* react dom
+* helmet (seo)
 
+#### El proyecto fue comentado en ingles por convención
 
 
