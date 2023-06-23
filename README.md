@@ -5,7 +5,7 @@
 ## Autor Rodñane Gustavo
 
 * [api url](https://meli-challange.onrender.com/api/items)
-* [client url](https://challange-meli.vercel.app/)
+* [client url](https://challange-meli.vercel.app/) --> Actualmente con bugs al querer modificar la url en el navegador. En la version local funciona bien el enrutado.
 
 ## Para iniciar el proyecto en local.
 #### clonar el proyecto y agregar las variables locales en un archivo .env
@@ -32,4 +32,6 @@
 * react + typescript (dev)
 * axios
 * react dom 
+
+
 
