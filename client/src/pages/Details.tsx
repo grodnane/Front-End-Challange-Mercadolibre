@@ -68,9 +68,6 @@ const seo:Seo = useMemo(()=>{
 },[item])
 
 
-
- 
-
   return (<>
               {      loading ? <Spinner/> : 
 

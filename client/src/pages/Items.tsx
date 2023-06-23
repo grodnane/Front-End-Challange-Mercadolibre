@@ -26,7 +26,7 @@ function Items() {
   const getItems = useCallback(
     () => {
         try{
-            console.log(import.meta.env.VITE_PUBLIC_URI)
+            
             axios.get(`${import.meta.env.VITE_PUBLIC_URI}?q=${query}`)
             .then((res)=>{
                 if(res.data.items.length){

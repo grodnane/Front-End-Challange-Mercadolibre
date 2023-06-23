@@ -1,11 +1,11 @@
 import { Price } from '../types'
-import { converThounsends, sign } from '../utils/helpers'
+import { converThounsends } from '../utils/helpers'
 
 
 function Price(props:Price) {
    
     
-    const {amount,currency,decimals } =props
+    const {amount,currency } =props
     
   return (
     <div className="priceContainer">

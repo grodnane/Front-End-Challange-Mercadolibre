@@ -6,14 +6,19 @@ export function sign(currency: string) {
 
 
 export function converThounsends(amount: number,currency: string): string {
-
+   
+   
+    
+   
+    
     if(currency === 'ARS'){
-    const value = amount.toLocaleString('es-ar', {
+        const converted = amount.toLocaleString('es-ar', {
         style: 'currency',
         currency: 'ARS',
         minimumFractionDigits: 2
     })
-    return value}else{
+    
+    return converted}else{
         const value = amount.toLocaleString('es-ar', {
             style: 'currency',
             currency: 'USD',
